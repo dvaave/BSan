@@ -1,7 +1,8 @@
 # BSan 
-Here is the source code of BSan.
 
-Dynamic analysis code is in BSan/dynamic analysis/samples/div.c and its related head files.
+Bsan is a hybrid detection combining offline analysis and online detection tool. 
 
-Static analysis code is in BSan/static analysis/examples/codeCoverage.dir/codeCoverage.C and its related head files.
+The offline analysis is based on Dyninst, a binary analysis tool. BSan uses Dyninst to analyze the binary to get the needed information, such as instruction operands, opcode, etc. Based on the data, our offline analysis can identify unnecessary detection, propagation, and instrumentation to reduce the performance overhead of BSan
+
+The online detection tool is based on DynamoRio, a dynamic binary instrumentation tool. Our tool retrieves the data from offline analysis and Dynamorio, will instrument the binary, and record the allocated heap objects or stack frames. If there is an action that violates our recorded data, an according alarm will be raised.
 
