@@ -1,5 +1,6 @@
 # BSan 
 Decription
+
 Bsan is a hybrid detection combining offline analysis and online detection tool. 
 
 The offline analysis is based on Dyninst, a binary analysis tool. BSan uses Dyninst to analyze the binary to get the needed information, such as instruction operands, opcode, etc. Based on the data, our offline analysis can identify unnecessary detection, propagation, and instrumentation to reduce the performance overhead of BSan
